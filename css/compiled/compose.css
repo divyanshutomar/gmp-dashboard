@@ -1,0 +1,12 @@
+
+.compose textarea{
+    margin-top: 20px;
+}
+.compose button{
+    margin-top: 10px;
+    float: right;
+}
+.compose p{
+	margin-top: 10px;
+	float: left;
+}
