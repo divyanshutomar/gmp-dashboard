@@ -17,5 +17,13 @@
 
                 $('#char_left1').html(text_remaining1 + ' characters remaining');
             });
-            tinymce.init({ selector:'#email-box' });
+            tinymce.init({
+             selector:'#email-box',
+             elementpath: false,
+             menubar: false,
+             resize: false,
+             statusbar: false,
+             skin_url: 'css/TinySkins/light',
+             skin: 'light',
+            });
         });   
