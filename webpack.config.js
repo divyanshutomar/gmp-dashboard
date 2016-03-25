@@ -1,7 +1,10 @@
 module.exports = {
- entry: "./js/userlist.js",
+ entry:{
+ userlist: "./js/userlist.js",
+ signin: "./js/sign-in.js"
+},
  output: {
-   filename: "js/userlist.min.js"
+   filename: "js/[name].min.js"
  },
  module: {
    loaders: [
