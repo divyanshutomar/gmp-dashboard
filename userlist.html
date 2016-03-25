@@ -80,65 +80,21 @@
         </ul>
     </div>
     <!-- end sidebar -->
-
-    <!-- main container -->
+    <!-- main-container -->
+<!-- main container -->
     <div class="content">
-
-        <div id="pad-wrapper">
-            <div class="compose">
-             <div class="row ctrls">
-                    <ul class="nav nav-tabs">
-                      <li class="active"><a href="#email" data-toggle="tab">Email</a></li>
-                      <li><a href="#sms" data-toggle="tab">SMS</a></li>
-                      <li><a href="#push" data-toggle="tab">Push Notification</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="email">
-                        <div class="compose">
-                            <div class="col-md-7">
-                                <textarea class="form-control" rows="4" placeholder="Write Your message..." id="email-box">
-                                </textarea>
-                                <a href="userlist.html"> 
-                                <button type="button" class="btn-glow primary btn-next"> 
-                                <i class="icon-chevron-right"></i> Select Users
-                                </button>
-                                </a>
-                            </div>
-                        </div>   
-                        </div>
-                        <div class="tab-pane" id="sms">
-                                    <div class="compose">                                     
-                                        <div class="col-md-7">
-                                            <textarea class="form-control" rows="4" placeholder="Write Your message..." maxlength="150" id="compose"></textarea>
-                                            <div id="char_left"></div>
-                                            <a href="userlist.html">
-                                            <button type="button" class="btn-glow primary btn-next"> 
-                                                    <i class="icon-chevron-right"></i> Select Users
-                                            </button>
-                                            </a>
-                                            <div class="clear-fix"></div>
-                                        </div>
-                                    </div>
-                        </div>
-                        <div class="tab-pane" id="push">
-                                    <div class="compose">
-                                        <div class="col-md-7">
-                                            <textarea class="form-control" rows="4" placeholder="Write Your message..." maxlength="150" id="compose1"></textarea>
-                                            <div id="char_left1"></div>
-                                            <a href="userlist.html">
-                                            <button type="button" class="btn-glow primary btn-next"> 
-                                                    <i class="icon-chevron-right"></i> Next
-                                            </button>
-                                            </a>
-                                            <div class="clear-fix"></div>
-                                        </div>
-                                    </div>
-                        </div>
-                    </div>
+        
+        <div id="pad-wrapper" class="users-list">
+            <div class="row header">
+                <h3>Users</h3>
+                <br>
+            <!-- Users table -->
+            <div class="row">
+                <div class="col-md-12" id="userlist">      
+                </div>                
             </div>
-            </div>
-        </div>
-    </div>
+           </div> 
+    <!-- end main container-->
     <!-- scripts -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -186,6 +142,12 @@
 
     </script>
     <script type="text/javascript" src="js/compose.js"></script>
+    <script type="text/javascript" src="js/userlist.min.js"></script>
+    <!-- React CDNs -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
 
 </body>
 </html>
