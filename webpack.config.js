@@ -18,6 +18,7 @@ module.exports = {
      }
    ]
  },
+ devtool: true,
  resolve: {
    extensions: ['', '.js', '.es6']
  },
