@@ -40,7 +40,7 @@ $(document).ready( function(){
 						 	}else if (e.status === 401){
 						 		if(data.message == ' '){
 						 		
-						 		$("#error_box").html("Try Again");
+						 		$("#error_box").html("Oops that's not a match! ");
 						 	}else{
 						 	
 						 		$("#error_box").html(data.message);
@@ -49,7 +49,7 @@ $(document).ready( function(){
 						 	
 						 		$('input[name=email]').val("");
 						 		$('input[name=password]').val("");
-						 		
+
 					       }else{
 					       		$("#error_box").html("Please try again after sometime");
 					       }
