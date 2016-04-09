@@ -1,10 +1,10 @@
 module.exports = {
  entry:{
- userlist: "./js/userlist.js",
- signin: "./js/sign-in.js"
+ userlist: "./src/userlist.js",
+ signin: "./src/signin.js"
 },
  output: {
-   filename: "js/[name].min.js"
+   filename: "public/js/[name].min.js"
  },
  module: {
    loaders: [
@@ -18,7 +18,6 @@ module.exports = {
      }
    ]
  },
- devtool: true,
  resolve: {
    extensions: ['', '.js', '.es6']
  },

@@ -1,4 +1,4 @@
-var path=require("path");
+var path=require("./path.js");
  console.log(path.HOST);
  var URL = path.HOST+":"+path.PORT+path.BASE_URL
  console.log(URL);

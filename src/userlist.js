@@ -88,12 +88,15 @@ var UserRow = React.createClass({
       }
   },
 	render : function(){
+    var imgStyle = {
+      marginRight : 10
+    }
     var createdMoment = moment(this.props.user.createdAt);
     var updatedMoment = moment(this.props.user.updatedAt);
 		return(
 				<tr>
 					<td>
-						<img src={this.state.url} width="50px" height="50px" onLoad = {this.imageResolver}  alt="contact" className="img-circle avatar hidden-phone"/>
+						<img style = {imgStyle} src={this.state.url} width="50px" height="50px" onLoad = {this.imageResolver}  alt="contact" className="img-circle avatar hidden-phone"/>
 						<a className="name">{this.props.user.name}</a>
 					</td>
 					<td>{this.props.user.mobile}</td>
