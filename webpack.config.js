@@ -1,7 +1,8 @@
 module.exports = {
  entry:{
  userlist: "./src/userlist.js",
- signin: "./src/signin.js"
+ signin: "./src/signin.js",
+ company: "./src/components/ListManager.jsx"
 },
  output: {
    filename: "public/js/[name].min.js"

@@ -4,6 +4,7 @@
     <title>GMP Dashboard</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     
     <!-- bootstrap -->
     <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -31,6 +32,10 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="css/compiled/compose.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+      
+
+
 
 </head>
 <body>
@@ -95,14 +100,10 @@
     <div class="content">
         
         <div id="pad-wrapper" class="users-list">
-            <div class="row header">
-                <h3>Company</h3>
-                <br>
-            <!-- Users table -->
-            <div class="row">
-                <div class="col-md-12" id="company"></div>                
+            <h3>Parking Companies</h3>
+                
+            <div class="row" id="company">
             </div>
-           </div> 
     <!-- end main container-->
     <!-- scripts -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -150,8 +151,17 @@
  });
 
     </script>
+    <script type="text/javascript">
+          $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+    </script>
     <script type="text/javascript" src="js/compose.js"></script>
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="js/company.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
 
 </body>
 </html>
