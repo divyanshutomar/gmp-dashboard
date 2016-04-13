@@ -11,25 +11,25 @@ var CurrentPageVal = 0;
 
 var ListManager = React.createClass({
 	getInitialState: function () {
-		return({data :[],btnPrevDisabled : false,btnNextDisabled: false,compCount:0});
+		return({data :[],btnPrevDisabled : false,btnNextDisabled: false,datasetCount:0});
 	},
 	checkPagesBound: function () {
 			CurrentPageVal<1?this.setState({btnPrevDisabled:true}):this.setState({btnPrevDisabled:false});
-			(CurrentPageVal<this.state.compCount && CurrentPageVal+PAGE_SIZE>this.state.compCount)?this.setState({btnNextDisabled:true}):this.setState({btnNextDisabled:false});
+			(CurrentPageVal<this.state.datasetCount && CurrentPageVal+PAGE_SIZE>this.state.datasetCount)?this.setState({btnNextDisabled:true}):this.setState({btnNextDisabled:false});
 	},
-	getCompaniesCount: function () {
+	getDatasetCount: function () {
 		$.ajax({
 	      url: this.props.url+"/count",
 	      cache: false,
 	      success: function(data) {
-	        this.setState({compCount:data['count']});
+	        this.setState({datasetCount:data['count']});
 	      }.bind(this),
 	      error: function(xhr, status, err) {
 	        console.error(this.props.url, status, err.toString());
 	      }.bind(this)
 	    });
 	},
-	getCompanies: function (limitVal,skipVal) {
+	getDataset: function (limitVal,skipVal) {
 		$.ajax({
 	      url: this.props.url,
 	      dataType: 'json',
@@ -50,18 +50,18 @@ var ListManager = React.createClass({
 	    });
 	},
 	componentDidMount: function () {
-		this.getCompaniesCount();
-		this.getCompanies(PAGE_SIZE,CurrentPageVal);
+		this.getDatasetCount();
+		this.getDataset(PAGE_SIZE,CurrentPageVal);
 		this.checkPagesBound();
 	},
 	onPageNext: function () {
-		this.getCompanies(PAGE_SIZE,CurrentPageVal+PAGE_SIZE);
+		this.getDataset(PAGE_SIZE,CurrentPageVal+PAGE_SIZE);
 		CurrentPageVal+=PAGE_SIZE;
 		this.checkPagesBound();
 
 	},
 	onPagePrev: function () {
-		this.getCompanies(PAGE_SIZE,CurrentPageVal-PAGE_SIZE);
+		this.getDataset(PAGE_SIZE,CurrentPageVal-PAGE_SIZE);
 		CurrentPageVal-=PAGE_SIZE;
 		this.checkPagesBound();
 
@@ -72,7 +72,7 @@ var ListManager = React.createClass({
 		return(
 			<div>
 				<div>
-				<List data = {this.state.data}/>
+				<List dataset = {this.state.data}/>
 				</div>
 				<a className={btnPrevClasses} onClick={this.onPagePrev}>Previous</a>
 				<a className={btnNextClasses} onClick={this.onPageNext}>Next</a>
@@ -84,4 +84,6 @@ var ListManager = React.createClass({
 
 });
 
-ReactDOM.render(<ListManager url={API_end + "Companies"} />,document.getElementById('company'))
+// module.exports = ListManager;
+
+ReactDOM.render(<ListManager url={API_end + "Companies"} />,document.getElementById('company'));
